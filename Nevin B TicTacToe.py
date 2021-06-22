@@ -6,12 +6,10 @@ root.title("Nevin - TicTacToe")
 #root.geometry("1200x710")
 
 
-#X starts so true
+#When Player X starts
 clicked = True
 count = 0
 
-#Variables
-BG_COLOR = (28, 170, 156)
 #disable all the buttons
 def disable_all_buttons():
     b1.config(state=DISABLED)
@@ -91,8 +89,9 @@ def checkifwon():
         winner = True
         messagebox.showinfo("Congratulations", "Player X wins")
         disable_all_buttons()
-
- ###Check for Player O
+        
+        
+        #Player O Winning Conditions
     elif b1["text"] == "O" and b2["text"] == "O" and b3["text"] == "O":
         b1.config(bg="red")
         b2.config(bg="red")
@@ -159,7 +158,7 @@ def checkifwon():
 
 
 
-#Check if the game is tied
+#If no one wins
     if count == 9 and winner == False:
         messagebox.showinfo("Tie", "No winner is declared")
 
@@ -190,7 +189,7 @@ def reset():
     b1 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b1))
     b2 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b2))
     b3 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b3))
-
+                                                                                                                            #Adding text, dimensions font and button color
     b4 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b4))
     b5 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b5))
     b6 = Button(root, text=" ", font=("Helvetica", 20), height=3, width=6, bg="Light Blue", command= lambda: b_click(b6))
